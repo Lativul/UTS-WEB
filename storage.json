@@ -1,0 +1,152 @@
+{
+    "books": [
+        {
+            "title": "Filosofi Teras",
+            "author": "Henry Manampiring",
+            "category": "Pengembangan Diri",
+            "stock": 5,
+            "format": "print",
+            "featured": true,
+            "id": 1
+        },
+        {
+            "title": "Laut Bercerita",
+            "author": "Leila S. Chudori",
+            "category": "Fiksi",
+            "stock": 4,
+            "format": "print",
+            "featured": true,
+            "id": 2
+        },
+        {
+            "title": "Atomic Habits",
+            "author": "James Clear",
+            "category": "Pengembangan Diri",
+            "stock": 2,
+            "format": "ebook",
+            "featured": true,
+            "id": 3
+        },
+        {
+            "title": "Bumi Manusia",
+            "author": "Pramoedya Ananta Toer",
+            "category": "Sastra",
+            "stock": 5,
+            "format": "print",
+            "featured": true,
+            "id": 4
+        },
+        {
+            "title": "Sebuah Seni untuk Bersikap Bodo Amat",
+            "author": "Mark Manson",
+            "category": "Pengembangan Diri",
+            "stock": 4,
+            "format": "ebook",
+            "featured": false,
+            "id": 5
+        },
+        {
+            "title": "Pulang",
+            "author": "Tere Liye",
+            "category": "Fiksi",
+            "stock": 3,
+            "format": "print",
+            "featured": false,
+            "id": 6
+        },
+        {
+            "title": "Laskar Pelangi",
+            "author": "Andrea Hirata",
+            "category": "Sastra",
+            "stock": 5,
+            "format": "print",
+            "featured": false,
+            "id": 7
+        },
+        {
+            "title": "Sapiens",
+            "author": "Yuval Noah Harari",
+            "category": "Sejarah",
+            "stock": 2,
+            "format": "ebook",
+            "featured": false,
+            "id": 8
+        },
+        {
+            "title": "The Psychology of Money",
+            "author": "Morgan Housel",
+            "category": "Bisnis",
+            "stock": 4,
+            "format": "ebook",
+            "featured": false,
+            "id": 9
+        },
+        {
+            "title": "Cantik Itu Luka",
+            "author": "Eka Kurniawan",
+            "category": "Sastra",
+            "stock": 2,
+            "format": "print",
+            "featured": false,
+            "id": 10
+        },
+        {
+            "title": "Pulang Pergi",
+            "author": "Tere Liye",
+            "category": "Fiksi",
+            "stock": 3,
+            "format": "ebook",
+            "featured": false,
+            "id": 11
+        },
+        {
+            "title": "Laut Bercerita: Edisi Digital",
+            "author": "Leila S. Chudori",
+            "category": "Fiksi",
+            "stock": 8,
+            "format": "ebook",
+            "featured": false,
+            "id": 12
+        }
+    ],
+    "members": [
+        {
+            "id": 1,
+            "name": "Nabila Putri",
+            "email": "nabila@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Raka Pratama",
+            "email": "raka@example.com"
+        },
+        {
+            "id": 3,
+            "name": "Aulia Rahma",
+            "email": "aulia@example.com"
+        },
+        {
+            "id": 4,
+            "name": "Dimas Saputra",
+            "email": "dimas@example.com"
+        }
+    ],
+    "loans": [
+        {
+            "id": 1,
+            "media_id": 1,
+            "member_id": 1,
+            "loan_date": "2026-11-15",
+            "due_date": "2026-11-22",
+            "status": "active"
+        },
+        {
+            "id": 2,
+            "media_id": 3,
+            "member_id": 3,
+            "loan_date": "2026-11-16",
+            "due_date": "2026-11-23",
+            "status": "active"
+        }
+    ]
+}

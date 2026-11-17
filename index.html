@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ruang Baca, katalog dan layanan peminjaman buku digital."
+    />
+    <title>Ruang Baca — Perpustakaan digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigasi utama">
+        <a class="brand" href="#beranda" aria-label="Ruang Baca, beranda">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M6 8.5c4.1-.7 7.4.2 10 2.6v14c-2.6-2.4-5.9-3.3-10-2.6v-14Z" fill="currentColor" />
+              <path d="M26 8.5c-4.1-.7-7.4.2-10 2.6v14c2.6-2.4 5.9-3.3 10-2.6v-14Z" fill="currentColor" opacity=".66" />
+              <path d="M16 11v14" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="brand-copy">ruang<span>baca</span><small>PERPUSTAKAAN DIGITAL</small></span>
+        </a>
+
+        <p class="nav-caption">MENU</p>
+        <nav class="main-nav">
+          <button class="nav-link is-active" type="button" data-view="home" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z" /></svg>
+            Beranda
+          </button>
+          <button class="nav-link" type="button" data-view="catalog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12ZM4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 7h7" /></svg>
+            Katalog buku
+          </button>
+          <button class="nav-link" type="button" data-view="loans">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14a1 1 0 0 1 1 1v16l-4-2-4 2-4-2-4 2V5a1 1 0 0 1 1-1Zm3 5h8m-8 4h8" /></svg>
+            Transaksi
+            <span class="nav-count" id="nav-loan-count">0</span>
+          </button>
+          <button class="nav-link" type="button" data-view="members">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6-3a4 4 0 0 1 0 8m2 1a4 4 0 0 1 2 3.5V21" /></svg>
+            Anggota
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <span class="note-icon" aria-hidden="true">✳</span>
+            <p>Buku membuka jendela untuk melihat dunia.</p>
+            <span>Temukan bacaan berikutnya hari ini.</span>
+          </div>
+          <div class="account-row">
+            <span class="avatar avatar-cyan">RB</span>
+            <span class="account-copy"><strong>Ruang Baca</strong><small>Pengelola perpustakaan</small></span>
+            <span class="account-dots" aria-hidden="true">···</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Ruang Baca</span><span class="breadcrumb-divider">/</span><strong id="breadcrumb-current">Beranda</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label" id="today-label"></span>
+            <span class="avatar avatar-small">RB</span>
+          </div>
+        </header>
+
+        <div class="page-content">
+          <section class="view-panel is-visible" id="view-home" aria-labelledby="home-heading">
+            <div class="welcome-row">
+              <div>
+                <p class="eyebrow"><span class="eyebrow-line"></span> RUANG UNTUK CERITA BARU</p>
+                <h1 id="home-heading">Selamat datang,<br /><span>pecinta buku.</span></h1>
+                <p class="welcome-description">Temukan bacaan yang membuat harimu lebih berarti.</p>
+              </div>
+              <div class="date-card"><span class="date-sparkle" aria-hidden="true">✳</span><span id="welcome-date"></span></div>
+            </div>
+
+            <div class="hero-banner">
+              <div class="hero-copy">
+                <span class="hero-tag"><span></span> KOLEKSI PILIHAN</span>
+                <h2>Cerita yang baik<br />selalu menemukan<br />jalannya.</h2>
+                <p>Jelajahi koleksi pilihan kami dan mulai petualangan barumu hari ini.</p>
+                <button class="button button-light" type="button" data-go-view="catalog">
+                  Jelajahi koleksi <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+              <div class="hero-art" aria-hidden="true">
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+                <div class="floating-star star-one">✳</div>
+                <div class="floating-star star-two">✦</div>
+                <div class="hero-book book-back"><span>ruang<br />imajinasi</span></div>
+                <div class="hero-book book-mid"><span>cerita<br />kecil</span></div>
+                <div class="hero-book book-front"><span>seni<br />melihat</span></div>
+                <span class="hero-label">buka halaman,<br />temukan dunia.</span>
+              </div>
+              <div class="hero-shape shape-top"></div>
+              <div class="hero-shape shape-bottom"></div>
+            </div>
+
+            <div class="stats-grid" aria-label="Ringkasan perpustakaan">
+              <article class="stat-card">
+                <span class="stat-icon icon-cyan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12ZM4 17.5A2.5 2.5 0 0 1 6.5 15H20" /></svg></span>
+                <span class="stat-text"><span>Total koleksi</span><strong id="stat-books">0</strong></span>
+                <span class="stat-caption">judul tersedia</span>
+              </article>
+              <article class="stat-card">
+                <span class="stat-icon icon-peach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-7v6m-3-3h6" /></svg></span>
+                <span class="stat-text"><span>Anggota aktif</span><strong id="stat-members">0</strong></span>
+                <span class="stat-caption">pembaca terdaftar</span>
+              </article>
+              <article class="stat-card">
+                <span class="stat-icon icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14a1 1 0 0 1 1 1v16l-4-2-4 2-4-2-4 2V5a1 1 0 0 1 1-1Zm3 5h8m-8 4h5" /></svg></span>
+                <span class="stat-text"><span>Sedang dipinjam</span><strong id="stat-loans">0</strong></span>
+                <span class="stat-caption">transaksi aktif</span>
+              </article>
+              <article class="stat-card">
+                <span class="stat-icon icon-lilac"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12ZM4 17.5A2.5 2.5 0 0 1 6.5 15H20M8 7h7" /></svg></span>
+                <span class="stat-text"><span>E-book digital</span><strong id="stat-ebooks">0</strong></span>
+                <span class="stat-caption">bisa dibaca kapan saja</span>
+              </article>
+            </div>
+
+            <section class="catalog-section" aria-labelledby="featured-heading">
+              <div class="section-heading">
+                <div><p class="section-kicker">PILIHAN UNTUKMU</p><h2 id="featured-heading">Buku yang disukai pembaca</h2></div>
+                <button class="text-link" type="button" data-go-view="catalog">Lihat semua <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="featured-grid" id="featured-books" aria-live="polite"></div>
+            </section>
+          </section>
+
+          <section class="view-panel" id="view-catalog" aria-labelledby="catalog-heading" hidden>
+            <div class="page-heading">
+              <p class="eyebrow"><span class="eyebrow-line"></span> JELAJAHI DAN TEMUKAN</p>
+              <h1 id="catalog-heading">Katalog <span>bacaan.</span></h1>
+              <p>Ratusan cerita menunggu untuk kamu temukan.</p>
+            </div>
+            <div class="catalog-toolbar">
+              <label class="search-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+                <input id="search-input" type="search" placeholder="Cari judul atau penulis..." autocomplete="off" />
+                <kbd>⌘ K</kbd>
+              </label>
+              <label class="filter-select"><span class="sr-only">Filter kategori</span><select id="category-filter"><option value="Semua">Semua kategori</option></select></label>
+            </div>
+            <div class="category-chips" id="category-chips" aria-label="Filter kategori"></div>
+            <p class="results-label" id="catalog-result-count" aria-live="polite"></p>
+            <div class="catalog-grid" id="catalog-books" aria-live="polite"></div>
+          </section>
+
+          <section class="view-panel" id="view-loans" aria-labelledby="loans-heading" hidden>
+            <div class="page-heading">
+              <p class="eyebrow"><span class="eyebrow-line"></span> RIWAYAT PEMINJAMAN</p>
+              <h1 id="loans-heading">Transaksi <span>buku.</span></h1>
+              <p>Pantau buku yang sedang dipinjam oleh para anggota.</p>
+            </div>
+            <div class="table-card">
+              <div class="table-topline"><div><h2>Semua transaksi</h2><p>Data diperbarui secara langsung.</p></div><span class="table-badge" id="loan-total-badge">0 transaksi</span></div>
+              <div class="table-scroll"><table><thead><tr><th>BUKU</th><th>ANGGOTA</th><th>TANGGAL PINJAM</th><th>JATUH TEMPO</th><th>STATUS</th></tr></thead><tbody id="loans-table-body"></tbody></table></div>
+              <div class="empty-state" id="loans-empty" hidden><span class="empty-icon">↗</span><strong>Belum ada transaksi</strong><span>Setiap petualangan membaca dimulai dari sebuah buku.</span><button class="button button-primary" type="button" data-go-view="catalog">Cari buku untuk dipinjam</button></div>
+            </div>
+          </section>
+
+          <section class="view-panel" id="view-members" aria-labelledby="members-heading" hidden>
+            <div class="page-heading">
+              <p class="eyebrow"><span class="eyebrow-line"></span> KOMUNITAS PEMBACA</p>
+              <h1>Anggota <span>ruang baca.</span></h1>
+              <p>Kenali para pembaca dan daftarkan anggota baru.</p>
+            </div>
+            <div class="member-layout">
+              <form class="form-card" id="member-form" novalidate>
+                <span class="form-icon icon-cyan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8-7v6m-3-3h6" /></svg></span>
+                <h2>Daftarkan pembaca</h2>
+                <p>Anggota bisa langsung meminjam koleksi yang tersedia.</p>
+                <label for="member-name">Nama lengkap</label>
+                <input id="member-name" name="name" type="text" placeholder="Contoh: Nabila Putri" minlength="2" maxlength="60" required />
+                <span class="field-error" id="member-name-error"></span>
+                <label for="member-email">Alamat email</label>
+                <input id="member-email" name="email" type="email" placeholder="nama@email.com" maxlength="120" required />
+                <span class="field-error" id="member-email-error"></span>
+                <button class="button button-primary form-submit" type="submit">Tambah anggota <span aria-hidden="true">↗</span></button>
+              </form>
+              <div class="member-list-card">
+                <div class="table-topline"><div><h2>Daftar anggota</h2><p id="members-description">Pembaca terdaftar di Ruang Baca.</p></div><span class="table-badge" id="member-total-badge">0 anggota</span></div>
+                <div class="member-list" id="member-list" aria-live="polite"></div>
+                <div class="empty-state compact" id="members-empty" hidden><span>Anggota baru akan muncul di sini.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <footer class="page-footer"><span>© <span id="footer-year"></span> Ruang Baca.</span><span>Dibuat untuk para pencari cerita <span class="footer-heart">✳</span></span></footer>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="borrow-dialog" id="borrow-dialog" aria-labelledby="dialog-title">
+      <form class="dialog-content" id="borrow-form" novalidate>
+        <button class="dialog-close" type="button" aria-label="Tutup" data-close-dialog>×</button>
+        <span class="dialog-icon" aria-hidden="true">↗</span>
+        <p class="section-kicker">MULAI MEMBACA</p>
+        <h2 id="dialog-title">Pinjam buku ini?</h2>
+        <p class="dialog-book-title" id="dialog-book-title"></p>
+        <p class="dialog-description">Pilih anggota yang akan meminjam. Masa peminjaman adalah 7 hari.</p>
+        <label for="borrower-select">Nama anggota</label>
+        <select id="borrower-select" name="member_id" required></select>
+        <span class="field-error" id="borrow-error"></span>
+        <button class="button button-primary form-submit" type="submit">Konfirmasi peminjaman <span aria-hidden="true">↗</span></button>
+      </form>
+    </dialog>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
