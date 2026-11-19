@@ -4,13 +4,24 @@ Prototipe katalog perpustakaan digital untuk tugas Pemrograman Web. Antarmuka me
 
 ## Menjalankan
 
-Pastikan PHP 8.1 atau lebih baru tersedia, lalu buka terminal di folder proyek dan jalankan:
+Cara tercepat, buka terminal PowerShell di folder proyek lalu jalankan:
 
 ```powershell
-php -S 127.0.0.1:8000
+.\jalankan.ps1
 ```
 
-Buka `http://127.0.0.1:8000` di browser. Data contoh disimpan di `storage.json`; jika file belum ada, aplikasi akan mengisinya dengan koleksi, anggota, dan transaksi awal.
+Skrip itu menyalakan server di `http://127.0.0.1:8080`; hentikan dengan `Ctrl + C`.
+
+alternatif lain untuk menjalankan program http://localhost/Web 
+Bila ingin mengetik perintahnya langsung tanpa skrip:
+
+```powershell
+& "C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\php.exe" -S 127.0.0.1:8080 -t .
+```
+
+Perintah `php` biasa mengarah ke PHP 8.2 yang diblokir kebijakan Application Control di komputer ini, karena itu dipakai path PHP 8.1 di atas.
+
+Buka `http://127.0.0.1:8080` di browser. Data contoh disimpan di `storage.json`; jika file belum ada, aplikasi akan mengisinya dengan koleksi, anggota, dan transaksi awal.
 
 ## Fitur
 
