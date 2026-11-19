@@ -9,6 +9,8 @@ Cara tercepat, buka terminal PowerShell di folder proyek lalu jalankan:
 ```powershell
 .\jalankan.ps1
 ```
+Atau gunakan diterminal
+php -S localhost:8080
 
 Skrip itu menyalakan server di `http://127.0.0.1:8080`; hentikan dengan `Ctrl + C`.
 
