@@ -136,16 +136,16 @@
             "id": 1,
             "media_id": 1,
             "member_id": 1,
-            "loan_date": "2026-11-15",
-            "due_date": "2026-11-22",
+            "loan_date": "2026-11-17",
+            "due_date": "2026-11-24",
             "status": "active"
         },
         {
             "id": 2,
             "media_id": 3,
             "member_id": 3,
-            "loan_date": "2026-11-16",
-            "due_date": "2026-11-23",
+            "loan_date": "2026-11-18",
+            "due_date": "2026-11-25",
             "status": "active"
         }
     ]
